@@ -13,18 +13,8 @@
 <hr>
 
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= "#{comment.commenter} @ #{comment.created_at.to_s}" %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <hr>
-<% end %>
+<%= render @article.comments %>
+<hr> do the thinwith
 
 <h2>Add a comment:</h2>
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
